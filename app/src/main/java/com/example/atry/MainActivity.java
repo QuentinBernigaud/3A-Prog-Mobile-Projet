@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -27,12 +29,18 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListeAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private SharedPreferences sharedPreferences;
+    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sharedPreferences = getSharedPreferences("application", Context.MODE_PRIVATE);
+        gson = new GsonBuilder()
+                .setLenient()
+                .create();
 
     makeApiCall();
     }
@@ -52,9 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     private void makeApiCall(){
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(response.isSuccessful() && response.body() != null){
                     List<Pokemon> pokemonList = response.body().getResults();
+                    saveList(pokemonList);
                     showList(pokemonList);
                 } else {
                     showError();
@@ -81,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
                 showError();
             }
         });
+
+    }
+
+    private void saveList(List<Pokemon> pokemonList) {
+
+        String jsonString = gson.toJson(pokemonList);
+        sharedPreferences
+                .edit()
+                .putString("jsonPokemonList", jsonString)
+                .apply();
+
+        Toast.makeText(getApplicationContext(), "Liste Saved", Toast.LENGTH_SHORT).show();
 
     }
 
