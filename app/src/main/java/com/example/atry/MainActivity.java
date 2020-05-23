@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
+import java.lang.reflect.Type;
 import java.util.List;
 
 import retrofit2.Call;
@@ -27,37 +30,57 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListeAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private SharedPreferences sharedPreferences;
+    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    showList();
-    makeApiCall();
+        sharedPreferences = getSharedPreferences("application", Context.MODE_PRIVATE);
+        gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        List<Pokemon> pokemonList = getDataFromCache();
+        if(pokemonList != null){
+        showList(pokemonList);
+        } else {
+
+            makeApiCall();
+        }
+
     }
 
-        private void showList(){
+    private List<Pokemon> getDataFromCache() {
+
+        String jsonPokemon = sharedPreferences.getString(Constants.KEY_POKEMON_LIST, null);
+
+        if(jsonPokemon == null) {
+            return null;
+        } else {
+            Type listType = new TypeToken<List<Pokemon>>(){}.getType();
+            return gson.fromJson(jsonPokemon, listType);
+        }
+
+    }
+
+    private void showList(List<Pokemon> pokemonList){
 
             recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
             recyclerView.setHasFixedSize(true);
             layoutManager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(layoutManager);
 
-            List<String> input = new ArrayList<>();
-            for (int i = 0; i < 100; i++) {
-                input.add("Test" + i);
-            }
 
-            mAdapter = new ListeAdapter(input);
+
+            mAdapter = new ListeAdapter(pokemonList);
             recyclerView.setAdapter(mAdapter);
 
         }
 
     private void makeApiCall(){
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -73,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(response.isSuccessful() && response.body() != null){
                     List<Pokemon> pokemonList = response.body().getResults();
-                    Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
+                    saveList(pokemonList);
+                    showList(pokemonList);
                 } else {
                     showError();
                 }
@@ -84,6 +108,18 @@ public class MainActivity extends AppCompatActivity {
                 showError();
             }
         });
+
+    }
+
+    private void saveList(List<Pokemon> pokemonList) {
+
+        String jsonString = gson.toJson(pokemonList);
+        sharedPreferences
+                .edit()
+                .putString("Constants.KEY_POKEMON_LIST", jsonString)
+                .apply();
+
+        Toast.makeText(getApplicationContext(), "Liste Saved", Toast.LENGTH_SHORT).show();
 
     }
 

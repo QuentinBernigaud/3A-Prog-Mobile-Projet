@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ListeAdapter extends RecyclerView.Adapter<ListeAdapter.ViewHolder> {
-    private List<String> values;
+    private List<Pokemon> values;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -29,7 +29,7 @@ public class ListeAdapter extends RecyclerView.Adapter<ListeAdapter.ViewHolder> 
         }
     }
 
-    public void add(int position, String item) {
+    public void add(int position, Pokemon item) {
         values.add(position, item);
         notifyItemInserted(position);
     }
@@ -42,7 +42,7 @@ public class ListeAdapter extends RecyclerView.Adapter<ListeAdapter.ViewHolder> 
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListeAdapter(List<String> myDataset) {
+    public ListeAdapter(List<Pokemon> myDataset) {
         values = myDataset;
     }
 
@@ -65,16 +65,9 @@ public class ListeAdapter extends RecyclerView.Adapter<ListeAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final String name = values.get(position);
-        holder.txtHeader.setText(name);
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(position);
-            }
-        });
-
-        holder.txtFooter.setText("Footer: " + name);
+        final Pokemon currentPokemon = values.get(position);
+        holder.txtHeader.setText(currentPokemon.getName());
+        holder.txtFooter.setText("Footer: " + currentPokemon.getUrl());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
