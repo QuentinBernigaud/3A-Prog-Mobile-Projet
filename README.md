@@ -1,0 +1,36 @@
+# 3A-Prog-Mobile-Projet
+
+Création d'une application mobile affichant une liste d'éléments ainsi que leur détails
+
+## Installation
+
+* Avoir [Android Studio](https://developer.android.com/studio) d'installé
+* Récupérer la branche Master de ce projet
+
+## Notation
+
+### Notions abordées 
+
+* Appels **REST**
+* Plusieurs écrans 
+* Liste affichée à l'aide d'une **RecyclerView**
+* Tentative de **Gitflow**
+* 
+* Fonctions supplémentaire 
+  - Mise en cache des données
+  -
+  -
+
+
+### Screenshot 
+
+
+
+### Auteur
+
+* **Bernigaud Quentin** Étudiant à l'[ESIEA](https://www.esiea.fr) 
+* Projet effectué en 3ème année
+
+### API
+
+Vous pouvez trouver l'API que j'utilise [ici]()
