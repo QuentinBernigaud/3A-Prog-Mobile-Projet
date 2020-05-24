@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.atry.Constants;
 import com.example.atry.R;
+import com.example.atry.Singletons;
 import com.example.atry.data.PokeApi;
 import com.example.atry.presentation.controller.MainController;
 import com.example.atry.presentation.model.Pokemon;
@@ -45,10 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new MainController(
                 this,
-                new GsonBuilder()
-                        .setLenient()
-                        .create(),
-                getSharedPreferences("application", Context.MODE_PRIVATE)
+                Singletons.getGson(),
+                Singletons.getSharedPreferences(getApplicationContext())
                 );
         controller.onStart();
 
