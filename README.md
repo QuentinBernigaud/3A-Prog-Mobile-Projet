@@ -15,11 +15,12 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 * Écran : 2 activités
 * Liste affichée à l'aide d'une **RecyclerView**
 * Tentative de **Gitflow**
-* 
 * Fonctions supplémentaire 
   - Mise en cache des données
-  -
-  -
+  - **MVC**
+  - **Design Patterns**
+  - Principes **SOLID**
+  - **Singleton**
 
 
 ## Screenshot 
