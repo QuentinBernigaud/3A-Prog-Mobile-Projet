@@ -1,4 +1,4 @@
-package com.example.atry;
+package com.example.atry.presentation.model;
 
 public class Pokemon {
 
