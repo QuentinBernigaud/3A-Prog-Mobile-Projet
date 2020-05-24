@@ -4,30 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.example.atry.Constants;
 import com.example.atry.R;
 import com.example.atry.Singletons;
-import com.example.atry.data.PokeApi;
 import com.example.atry.presentation.controller.MainController;
 import com.example.atry.presentation.model.Pokemon;
-import com.example.atry.presentation.model.RestPokemonResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,7 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            mAdapter = new ListeAdapter(pokemonList);
+            mAdapter = new ListeAdapter(pokemonList, new ListeAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(Pokemon item) {
+                    controller.onItemClick(item);
+                }
+            });
             recyclerView.setAdapter(mAdapter);
 
         }
@@ -79,4 +71,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void navigateToDetails(Pokemon pokemon) {
+
+        Intent myIntent = new Intent(MainActivity.this, DetailsActivity.class);
+        myIntent.putExtra("pokemonKey", Singletons.getGson().toJson(pokemon));
+        MainActivity.this.startActivity(myIntent);
+
+    }
 }
