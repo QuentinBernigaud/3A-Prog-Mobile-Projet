@@ -12,7 +12,7 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 ### Notions abordées 
 
 * Appels **REST**
-* Plusieurs écrans 
+* Écran : 2 activités
 * Liste affichée à l'aide d'une **RecyclerView**
 * Tentative de **Gitflow**
 * 
@@ -33,4 +33,4 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 
 ### API
 
-Vous pouvez trouver l'API que j'utilise [ici]()
+Vous pouvez trouver l'API que j'utilise [ici]https://pokeapi.co/api/v2/pokemon)
