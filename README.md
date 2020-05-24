@@ -9,7 +9,7 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 
 ## Notation
 
-### Notions abordées 
+## Notions abordées 
 
 * Appels **REST**
 * Écran : 2 activités
@@ -22,15 +22,15 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
   -
 
 
-### Screenshot 
+## Screenshot 
 
 
 
-### Auteur
+## Auteur
 
 * **Bernigaud Quentin** Étudiant à l'[ESIEA](https://www.esiea.fr) 
 * Projet effectué en 3ème année
 
-### API
+## API
 
 Vous pouvez trouver l'API que j'utilise [ici](https://pokeapi.co/api/v2/pokemon)
