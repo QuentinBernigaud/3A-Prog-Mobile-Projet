@@ -9,7 +9,7 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 
 ## Notation
 
-## Notions abordées 
+### Notions abordées 
 
 * Appels **REST**
 * Écran : 2 activités
@@ -23,7 +23,7 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
   - **Singleton**
 
 
-## Screenshot 
+### Screenshot 
 
 
 
