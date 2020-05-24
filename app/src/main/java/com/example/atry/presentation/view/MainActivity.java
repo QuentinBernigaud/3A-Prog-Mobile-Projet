@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+        //refresh
 
     public void showList(List<Pokemon> pokemonList){
 
