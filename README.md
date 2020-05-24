@@ -33,4 +33,4 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 
 ### API
 
-Vous pouvez trouver l'API que j'utilise [ici]https://pokeapi.co/api/v2/pokemon)
+Vous pouvez trouver l'API que j'utilise [ici](https://pokeapi.co/api/v2/pokemon)
