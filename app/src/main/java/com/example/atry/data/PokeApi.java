@@ -1,10 +1,9 @@
-package com.example.atry;
+package com.example.atry.data;
 
-import java.util.List;
+import com.example.atry.presentation.model.RestPokemonResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface PokeApi {
 

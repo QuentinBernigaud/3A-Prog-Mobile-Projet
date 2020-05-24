@@ -1,4 +1,4 @@
-package com.example.atry;
+package com.example.atry.presentation.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.atry.R;
+import com.example.atry.presentation.model.Pokemon;
 
 import java.util.List;
 

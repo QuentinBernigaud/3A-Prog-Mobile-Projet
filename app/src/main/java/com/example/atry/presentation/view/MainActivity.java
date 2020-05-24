@@ -1,4 +1,4 @@
-package com.example.atry;
+package com.example.atry.presentation.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.atry.Constants;
+import com.example.atry.R;
+import com.example.atry.data.PokeApi;
+import com.example.atry.presentation.model.Pokemon;
+import com.example.atry.presentation.model.RestPokemonResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
