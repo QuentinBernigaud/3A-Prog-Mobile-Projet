@@ -3,5 +3,7 @@
     <string name="details_text_description">Écran Details</string>
     <string name="ecran_details_url">Écran Détails Url</string>
     <string name="ecran_details_weight">ecran_details_weight</string>
+    <string name="ecran_details_height">ecran_details_height</string>
+    <string name="ecran_details_id">ecran_details_id</string>
 
 </resources>
