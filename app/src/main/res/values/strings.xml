@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">QB34</string>
     <string name="details_text_description">Écran Details</string>
+    <string name="ecran_details_url">Écran Détails Url</string>
+    <string name="ecran_details_weight">ecran_details_weight</string>
+
 </resources>
