@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent myIntent = new Intent(MainActivity.this, DetailsActivity.class);
         myIntent.putExtra("pokemonKey", Singletons.getGson().toJson(pokemon));
+        myIntent.putExtra("pokemonKeyUrl", Singletons.getGson().toJson(pokemon));
+        myIntent.putExtra("pokemonKeyWeight", Singletons.getGson().toJson(pokemon));
+        myIntent.putExtra("pokemonKeyHeight", Singletons.getGson().toJson(pokemon));
+        myIntent.putExtra("pokemonKeyId", Singletons.getGson().toJson(pokemon));
         MainActivity.this.startActivity(myIntent);
 
     }

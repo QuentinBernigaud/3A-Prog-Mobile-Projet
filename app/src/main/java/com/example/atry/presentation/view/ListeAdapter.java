@@ -27,14 +27,14 @@ public class ListeAdapter extends RecyclerView.Adapter<ListeAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
          TextView txtHeader;
-         TextView txtFooter;
+         //TextView txtFooter;
          View layout;
 
          ViewHolder(View v) {
             super(v);
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
-            txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            //txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
     }
 
@@ -77,7 +77,7 @@ public class ListeAdapter extends RecyclerView.Adapter<ListeAdapter.ViewHolder> 
         // - replace the contents of the view with that element
         final Pokemon currentPokemon = values.get(position);
         holder.txtHeader.setText(currentPokemon.getName());
-        holder.txtFooter.setText("Footer: " + currentPokemon.getUrl());
+        //holder.txtFooter.setText("Footer: " + currentPokemon.getUrl());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
