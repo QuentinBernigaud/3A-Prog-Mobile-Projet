@@ -4,19 +4,22 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 
 ## Installation
 
-* Avoir [Android Studio](https://developer.android.com/studio) d'installé
-* Récupérer la branche Master de ce projet
+* Avoir [Android Studio](https://developer.android.com/studio) d'installé.
+* Récupérer la branche Master de ce projet.  
+```
+https://github.com/QuentinBernigaud/3A-Prog-Mobile-Projet
+```
 
 ## Notation
 
 ### Notions abordées 
 
 * Appels **REST**
-* Écran : 2 activités
+* Écran : **2** activités
 * Liste affichée à l'aide d'une **RecyclerView**
 * Tentative de **Gitflow**
 * Fonctions supplémentaires :  
-  - Mise en cache des données
+  - Mise **en cache** des données
   - **MVC**
   - **Design Patterns**
   - Principes **SOLID**
@@ -30,15 +33,23 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 
 
 ***écran des détails lors d'un click sur un élément de la liste***  
-<img src="images/ProjetFinal21.png" width="250">
+<img src="images/ProjetFinal21.png" width="250">  
+
+## Améliorations
+
+J'aimerai ajouter une image des pokémons dans l'écran Details comme suit :  
+<img src="images/ProjetFinal31.png" width="250">
+
+J'explore actuellement plusieurs possibilités pour implémenter cette fonctionnalité.  
+(picasso, ImageView...)
 
 
 ## Auteur
 
 * **Bernigaud Quentin** Étudiant à l'[ESIEA](https://www.esiea.fr) 
-* Projet effectué en 3ème année
+* Projet effectué en 3ème année.
 
 ## API
 
 Vous pouvez trouver l'API originale que j'utilise [ici](https://pokeapi.co/api/v2/pokemon)  
-Cependant [voici](https://github.com/QuentinBernigaud/3A-Prog-Mobile-Projet/blob/master/pokeapi.json) l'API modifiée par moi-même que j'utilise dans ce projet
+Cependant [voici](https://github.com/QuentinBernigaud/3A-Prog-Mobile-Projet/blob/master/pokeapi.json) l'API modifiée par moi-même que j'utilise dans ce projet.
