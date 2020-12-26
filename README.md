@@ -7,7 +7,7 @@ Création d'une application mobile affichant une liste d'éléments ainsi que le
 * Avoir [Android Studio](https://developer.android.com/studio) d'installé.
 * Récupérer la branche Master de ce projet.  
 ```
-https://github.com/QuentinBernigaud/3A-Prog-Mobile-Projet
+https://github.com/QuentinBernigaud/ProjetKotlin
 ```
 
 ## Notation
